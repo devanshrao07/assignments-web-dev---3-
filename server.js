@@ -2,7 +2,7 @@
 
 const http = require("http");
 
-const PORT = 3000;
+// const PORT = 3000;
 
 const server = http.createServer((req, res) => {
 
@@ -22,7 +22,7 @@ const server = http.createServer((req, res) => {
 
     else if (req.url === "/contact") {
         res.statusCode = 200;
-        res.end("<h1>Contact Page</h1><p>Email: contact@example.com</p>");
+        res.end("<h1>Contact Page</h1><p>Email: de4vanshrao3323@gtmail.com.com</p>");
     }
 
     else {
@@ -31,6 +31,6 @@ const server = http.createServer((req, res) => {
     }
 });
 
-server.listen(PORT, () => {
-    console.log(`Server running at http://localhost:${PORT}`);
+server.listen(3000, () => {
+    console.log("Server running on port 3000");
 });
