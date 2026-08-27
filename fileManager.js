@@ -1,11 +1,9 @@
 // fileManager.js
 
-const fs = require("fs");
-
-const fileName = "sample.txt";
+const fs = require("fs")
 
 // CREATE
-fs.writeFile(fileName, "Hello! This is the Smart Utility Toolkit.", (err) => {
+fs.writeFile("data.txt", "Hello! This is the Smart Utility Toolkit.", (err) => {
 
     if (err) {
         console.log("Error creating file:", err.message);
@@ -15,7 +13,7 @@ fs.writeFile(fileName, "Hello! This is the Smart Utility Toolkit.", (err) => {
     console.log("File created successfully.");
 
     // READ
-    fs.readFile(fileName, "utf8", (err, data) => {
+    fs.readFile("data.txt", "utf8", (err, data) => {
 
         if (err) {
             console.log("Error reading file:", err.message);
@@ -26,7 +24,7 @@ fs.writeFile(fileName, "Hello! This is the Smart Utility Toolkit.", (err) => {
 
         // UPDATE
         fs.appendFile(
-            fileName,
+            "data.txt",
             "\nThis content was added during the update operation.",
             (err) => {
 
@@ -38,18 +36,16 @@ fs.writeFile(fileName, "Hello! This is the Smart Utility Toolkit.", (err) => {
                 console.log("File updated successfully.");
 
                 // READ UPDATED FILE
-                fs.readFile(fileName, "utf8", (err, updatedData) => {
+                fs.readFile("data.txt", "utf8", (err, res) => {
 
                     if (err) {
                         console.log("Error reading updated file:", err.message);
                         return;
                     }
-
-                    console.log("Updated content:");
-                    console.log(updatedData);
+                    console.log(res);
 
                     // DELETE
-                    fs.unlink(fileName, (err) => {
+                    fs.unlink("data.txt", (err) => {
 
                         if (err) {
                             console.log("Error deleting file:", err.message);
